@@ -1,0 +1,7 @@
+#include <unistd.h>
+
+
+float max(float* tab,int size);
+float min(float* tab,int size);
+int size_entier(int a);
+void remplir_taille(int** tab,char* a);

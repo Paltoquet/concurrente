@@ -1,0 +1,1 @@
+/home/user/Documents/opencv/temperature/CMakeFiles/concurent.dir

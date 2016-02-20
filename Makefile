@@ -135,29 +135,53 @@ affichage.cpp.s:
 	$(MAKE) -f CMakeFiles/concurent.dir/build.make CMakeFiles/concurent.dir/affichage.cpp.s
 .PHONY : affichage.cpp.s
 
-project.o: project.cpp.o
-.PHONY : project.o
+math.o: math.c.o
+.PHONY : math.o
 
 # target to build an object file
-project.cpp.o:
-	$(MAKE) -f CMakeFiles/concurent.dir/build.make CMakeFiles/concurent.dir/project.cpp.o
-.PHONY : project.cpp.o
+math.c.o:
+	$(MAKE) -f CMakeFiles/concurent.dir/build.make CMakeFiles/concurent.dir/math.c.o
+.PHONY : math.c.o
 
-project.i: project.cpp.i
-.PHONY : project.i
+math.i: math.c.i
+.PHONY : math.i
 
 # target to preprocess a source file
-project.cpp.i:
-	$(MAKE) -f CMakeFiles/concurent.dir/build.make CMakeFiles/concurent.dir/project.cpp.i
-.PHONY : project.cpp.i
+math.c.i:
+	$(MAKE) -f CMakeFiles/concurent.dir/build.make CMakeFiles/concurent.dir/math.c.i
+.PHONY : math.c.i
 
-project.s: project.cpp.s
-.PHONY : project.s
+math.s: math.c.s
+.PHONY : math.s
 
 # target to generate assembly for a file
-project.cpp.s:
-	$(MAKE) -f CMakeFiles/concurent.dir/build.make CMakeFiles/concurent.dir/project.cpp.s
-.PHONY : project.cpp.s
+math.c.s:
+	$(MAKE) -f CMakeFiles/concurent.dir/build.make CMakeFiles/concurent.dir/math.c.s
+.PHONY : math.c.s
+
+project2.o: project2.cpp.o
+.PHONY : project2.o
+
+# target to build an object file
+project2.cpp.o:
+	$(MAKE) -f CMakeFiles/concurent.dir/build.make CMakeFiles/concurent.dir/project2.cpp.o
+.PHONY : project2.cpp.o
+
+project2.i: project2.cpp.i
+.PHONY : project2.i
+
+# target to preprocess a source file
+project2.cpp.i:
+	$(MAKE) -f CMakeFiles/concurent.dir/build.make CMakeFiles/concurent.dir/project2.cpp.i
+.PHONY : project2.cpp.i
+
+project2.s: project2.cpp.s
+.PHONY : project2.s
+
+# target to generate assembly for a file
+project2.cpp.s:
+	$(MAKE) -f CMakeFiles/concurent.dir/build.make CMakeFiles/concurent.dir/project2.cpp.s
+.PHONY : project2.cpp.s
 
 # Help Target
 help:
@@ -171,9 +195,12 @@ help:
 	@echo "... affichage.o"
 	@echo "... affichage.i"
 	@echo "... affichage.s"
-	@echo "... project.o"
-	@echo "... project.i"
-	@echo "... project.s"
+	@echo "... math.o"
+	@echo "... math.i"
+	@echo "... math.s"
+	@echo "... project2.o"
+	@echo "... project2.i"
+	@echo "... project2.s"
 .PHONY : help
 
 

@@ -60,7 +60,7 @@ void afficher(Mat m){
 	}
 	first=1;
 	imshow( "display", m );
-	waitKey(100);
+	waitKey(0);
 }
 
 void afficherFin(Mat m){

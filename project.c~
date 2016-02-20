@@ -5,18 +5,21 @@
 #include <iostream>
 #include <time.h>
 #include "affichage.hpp"
-
-
-
-extern "C"{
 #include "math.h"
-}
+
+
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+  void display(int,int*,int);;
+#ifdef __cplusplus
+};
+#endif
 
 int TEMPERATURE=3000;
 float record[10];
-
-
-void display(int,int*,int);
 
 typedef struct{
 	int x;//ligne
@@ -43,8 +46,8 @@ float calculerTemps(){
 			r+=record[i];
 		}
 	}
-	r-=min(record,10);
-	r-=max(record,10);
+	//r-=min(record,10);
+	//r-=max(record,10);
 	return r;
 }
 
@@ -110,8 +113,9 @@ int main(int argc,char*argv[]){
 		nb_iteration,taille,affichage_temperature,temps);
 	
 	int c=6;
-	//10 mesures
 	int cycle=10;
+	//taille=7;
+	//nb_iteration=30;
 
 	/*mesure du temps*/
 	clock_t start, end;
@@ -148,11 +152,9 @@ int main(int argc,char*argv[]){
 					tab[k * taille + j + 1], c);
 			}
 		}
-
 		int* tmp=tab;
 		tab = result;
 		result=tmp;
-
 		for(k = 1;k < (taille - 1); ++k){
 			for(j = 1; j < (taille - 1); ++j){
 				//vertical
@@ -164,10 +166,12 @@ int main(int argc,char*argv[]){
 		tmp=tab;
 		tab = result;
 		remplir(tab,x,y,taille);
+		afficher(tab,taille);
+		display(taille,tab,TEMPERATURE);
 		result=tmp;
 	}
 	//printf("Apres boucle\0");
-	//display2(taille,tab,TEMPERATURE);
+	//display(taille,tab,TEMPERATURE);
 	free(tab);
 	free(result);
 
@@ -176,10 +180,10 @@ int main(int argc,char*argv[]){
 	//nombre de clock divisé par la fréquence
 	cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 	printf("temps de calcul %f\n",cpu_time_used);
-	record[p]=(float)cpu_time_used;
+	//record[p]=(float)cpu_time_used;
 	}
-	
-	
+	//int m=malloc(taille*taille*sizeof(int));
+	//m[i][c]=m[i*taille+c]
 
 	return 0;
 }
